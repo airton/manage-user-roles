@@ -54,6 +54,8 @@ This version of the plugin supports rules for seeing one's own content or all co
 == Changelog ==
 
 = 2.0.1 =
+* Fix: Apply security fixes for sanitization and escaping output.
+* Fix: Reduce plugin tags to a maximum of 5 to comply with WordPress.org guidelines.
 * Fix: Adjust default English translation for settings page.
 
 = 2.0.0 =
