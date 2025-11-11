@@ -2,7 +2,7 @@
 
 - **Contributors:** airtonvancin
 - **Donate link:** https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
-- **Tags:** user, roles, administration, content visibility, permissions, multi-author
+- **Tags:** user, roles, administration, content visibility, permissions
 - **Requires at least:** 3.0
 - **Tested up to:** 6.0
 - **Stable tag:** 2.0.0
