@@ -1,50 +1,63 @@
 === Manage User Roles ===
 Contributors: airtonvancin
 Donate link: https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
-Tags: user, roles, administration, adm, internationalization, i18n, translation, portuguese, spanish
+Tags: user, roles, administration, content visibility, permissions, multi-author
 Requires at least: 3.0
-Tested up to: 6.0
-Stable tag: 1.2.0
+Tested up to: 6.9
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple but powerful plugin to control content visibility for non-administrator users, ensuring they only see their own posts.
+A flexible plugin to control content visibility for non-administrator users with advanced, role-based rules.
 
 == Description ==
 
-This plugin provides two main features to enhance user role management in the WordPress admin area:
+This plugin gives administrators fine-grained control over content visibility in the WordPress admin area. Instead of a one-size-fits-all approach, you can set specific viewing permissions for each user role.
 
-1.  **Post Restriction:** For any user who is not an administrator, the posts list table (Posts, Pages, and any other post types) will be filtered to show only the content they have authored.
-2.  **Admin Bar Cleanup:** It removes the "Edit" link from the admin bar when a non-administrator is viewing a single post they did not create.
+**Core Features:**
 
-This is perfect for multi-author sites where you want to prevent editors, authors, or contributors from seeing or accessing content created by other users. By default, these features are active, but they can be disabled by an administrator via the settings page.
+*   **Role-Based Permissions:** For each user role (like Editor, Author, Contributor), you can decide what content they are allowed to see.
+*   **Flexible Rules:** Choose between two simple but powerful rules for each role:
+    *   **See only their own content:** The user will only see the posts, pages, or custom post types they have personally created.
+    *   **See all content:** The user will have no content restrictions and can see everything, just like an administrator.
+*   **Admin Bar Cleanup:** The "Edit" link on the admin bar is automatically hidden when a user is viewing a post they don't have permission to see.
+*   **Administrator Override:** Administrators are never affected by these rules and can always see all content.
+
+This is the perfect tool for multi-author websites, magazines, or any project where you need to ensure users only have access to the content relevant to them.
 
 == Installation ==
 
 1.  Upload the `manage-user-roles` folder to the `/wp-content/plugins/` directory.
 2.  Activate the plugin through the 'Plugins' menu in WordPress.
-3.  (Optional) Navigate to **Settings > Manage User Roles** in your WordPress admin panel.
-4.  There you can uncheck the box to disable the plugin's restrictions if needed.
+3.  Navigate to **Settings > Manage User Roles** in your WordPress admin panel.
+4.  For each user role listed, select the desired viewing rule from the dropdown menu.
+5.  Click "Save Changes". The rules will be applied immediately.
 
 == Frequently Asked Questions ==
 
-= What exactly does this plugin do? =
+= How do I configure the plugin? =
 
-It filters the post list in the admin dashboard so that non-admin users can only see the posts they have created. It also hides the "Edit" button on the admin bar for posts they don't own.
+Go to **Settings > Manage User Roles**. There you will find a list of all user roles on your site (except for Administrator). For each role, you can choose whether they see "only their own content" or "all content".
 
-= How can I disable this feature? =
+= What is the default setting? =
 
-If you are an administrator, you can go to **Settings > Manage User Roles** and uncheck the "Ativar Restrições" box. This will disable all plugin functionality.
+By default, all non-administrator roles are set to "See only their own content" for maximum security. You can change this at any time.
 
-= What languages are supported? =
+= Can I set more complex rules, like allowing one role to see another's posts? =
 
-* The plugin supports English (default), Portuguese (Brazil), and Spanish.
+This version of the plugin supports rules for seeing one's own content or all content. More complex rules are being considered for future versions.
 
-= What is the plugin license? =
+== Screenshots ==
 
-* This plugin is released under a GPL license.
+1. Configurações do Plugin: Defina as permissões de visualização para cada função de usuário.
 
 == Changelog ==
+
+= 2.0.0 =
+* **Major Overhaul:** Replaced the simple on/off switch with a flexible, role-based settings page.
+* Administrators can now set viewing permissions ("own content" or "all content") for each user role individually.
+* Rewrote the core filtering logic to be more efficient and accommodate the new rules.
+* Updated and improved the plugin documentation.
 
 = 1.2.0 =
 * Add a settings page to allow administrators to enable or disable the functionality.
@@ -52,11 +65,8 @@ If you are an administrator, you can go to **Settings > Manage User Roles** and 
 
 = 1.1.0 =
 * Add Portuguese (Brazil) and Spanish language support.
-* Remove unused files and code.
-* Update plugin version.
 
 = 1.0.0 =
-
 * Initial version.
 
 == License ==

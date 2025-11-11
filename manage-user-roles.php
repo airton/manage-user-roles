@@ -2,9 +2,9 @@
 /**
  * Plugin Name:       Manage User Roles
  * Plugin URI:        https://github.com/airton/manage-user-roles
- * Description:       Restricts users to only see their own posts in the WordPress admin.
- * Version:           1.2.0
- * Author:            Airton Vancin
+ * Description:       Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules.
+ * Version:           2.0.0
+ * Author:            @airton
  * Author URI:        https://airtonvancin.com
  * Text Domain:       manage-user-roles
  * License:           GPL-2.0+
@@ -13,75 +13,83 @@
  * GitHub Plugin URI: https://github.com/airton/manage-user-roles
  */
 
-// Previne acesso direto
-if( ! defined( 'ABSPATH' ) ){
-	exit;
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
 
 /**
- * Define o valor padrão da opção ao ativar o plugin.
+ * Define valores padrão ao ativar o plugin.
  */
 function mur_activate() {
-    add_option( 'mur_plugin_enabled', '1' );
+    // Define um array vazio para as configurações, a lógica lidará com os padrões.
+    add_option( 'mur_role_settings', array() );
 }
 register_activation_hook( __FILE__, 'mur_activate' );
 
 /**
- * Carrega arquivos de traduções.
+ * Carrega o textdomain para traduções.
  */
 function mur_load_textdomain() {
-	load_plugin_textdomain( 'manage-user-roles', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+    load_plugin_textdomain( 'manage-user-roles', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'mur_load_textdomain' );
 
 /**
- * Limita os posts para cada usuário.
+ * Filtra a consulta de posts com base nas regras de role.
  */
 function mur_limit_posts_per_user( $query ) {
-    if ( get_option( 'mur_plugin_enabled', '1' ) !== '1' ) {
+    if ( ! is_admin() || ! $query->is_main_query() ) {
         return;
     }
 
-	$current_user = wp_get_current_user();
-	$author_role = $current_user->roles[0];
-	$author_id = $current_user->ID;
-
-    if( is_admin() && $query->is_main_query() && $author_role != 'administrator' ) {
-        $query->set( 'author__in', array($author_id) );
+    $current_user = wp_get_current_user();
+    if ( in_array( 'administrator', $current_user->roles ) ) {
+        return; // Administradores não têm restrições.
     }
+
+    $settings = get_option( 'mur_role_settings', array() );
+    $user_role = $current_user->roles[0]; // Pega a role primária do usuário.
+
+    // Se não houver regra para esta role, aplica a padrão (ver apenas o próprio conteúdo).
+    $rule = isset( $settings[ $user_role ]['view_rule'] ) ? $settings[ $user_role ]['view_rule'] : 'own_content';
+    
+    if ( 'own_content' === $rule ) {
+        $query->set( 'author', $current_user->ID );
+    }
+    // Adicione aqui futuras lógicas para regras mais complexas (ex: ver posts de outras roles).
 }
 add_action( 'pre_get_posts', 'mur_limit_posts_per_user' );
 
 /**
- * Remove o botão de editar post da barra de administração.
+ * Remove o botão de editar da admin bar se o usuário não for o autor.
  */
 function mur_remove_items_admin_bar() {
-    if ( get_option( 'mur_plugin_enabled', '1' ) !== '1' ) {
+    $current_user = wp_get_current_user();
+    if ( in_array( 'administrator', $current_user->roles ) ) {
         return;
     }
 
-	global $wp_admin_bar;
+    $settings = get_option( 'mur_role_settings', array() );
+    $user_role = $current_user->roles[0];
+    $rule = isset( $settings[ $user_role ]['view_rule'] ) ? $settings[ $user_role ]['view_rule'] : 'own_content';
 
-	if( is_singular() ){
-		$author_id_post = get_the_author_meta('ID');
-		$current_user = wp_get_current_user();
-		$author_role = $current_user->roles[0];
-		$author_id = $current_user->ID;
-
-		if( $author_id_post != $author_id && $author_role != 'administrator' ){
-			$wp_admin_bar->remove_menu('edit');
-		}
-	}
+    if ( 'own_content' === $rule && is_singular() ) {
+        global $wp_admin_bar;
+        $post_author_id = get_the_author_meta( 'ID' );
+        if ( $current_user->ID != $post_author_id ) {
+            $wp_admin_bar->remove_menu( 'edit' );
+        }
+    }
 }
 add_action( 'wp_before_admin_bar_render', 'mur_remove_items_admin_bar' );
 
 /**
- * Adiciona a página de configurações do plugin.
+ * Adiciona a página de configurações.
  */
 function mur_add_settings_page() {
     add_options_page(
-        'Manage User Roles Settings',
-        'Manage User Roles',
+        __( 'Manage User Roles Settings', 'manage-user-roles' ),
+        __( 'Manage User Roles', 'manage-user-roles' ),
         'manage_options',
         'manage-user-roles',
         'mur_render_settings_page'
@@ -90,7 +98,7 @@ function mur_add_settings_page() {
 add_action( 'admin_menu', 'mur_add_settings_page' );
 
 /**
- * Renderiza o HTML da página de configurações.
+ * Renderiza a página de configurações.
  */
 function mur_render_settings_page() {
     ?>
@@ -100,7 +108,7 @@ function mur_render_settings_page() {
             <?php
             settings_fields( 'mur_settings_group' );
             do_settings_sections( 'manage-user-roles' );
-            submit_button( 'Salvar Alterações' );
+            submit_button();
             ?>
         </form>
     </div>
@@ -108,44 +116,57 @@ function mur_render_settings_page() {
 }
 
 /**
- * Registra as configurações do plugin.
+ * Registra as seções e campos da página de configurações.
  */
 function mur_register_settings() {
-    register_setting( 'mur_settings_group', 'mur_plugin_enabled' );
+    register_setting( 'mur_settings_group', 'mur_role_settings' );
 
     add_settings_section(
-        'mur_general_section',
-        'Configurações Gerais',
-        'mur_general_section_callback',
+        'mur_roles_section',
+        __( 'Regras de Visualização por Função', 'manage-user-roles' ),
+        'mur_roles_section_callback',
         'manage-user-roles'
     );
 
-    add_settings_field(
-        'mur_plugin_enabled_field',
-        'Ativar Restrições',
-        'mur_plugin_enabled_field_callback',
-        'manage-user-roles',
-        'mur_general_section'
-    );
+    $roles = get_editable_roles();
+    unset( $roles['administrator'] ); // Remove a role de administrador da lista.
+
+    foreach ( $roles as $role_slug => $role_details ) {
+        add_settings_field(
+            'mur_role_field_' . $role_slug,
+            $role_details['name'],
+            'mur_role_field_callback',
+            'manage-user-roles',
+            'mur_roles_section',
+            [ 'slug' => $role_slug, 'name' => $role_details['name'] ]
+        );
+    }
 }
 add_action( 'admin_init', 'mur_register_settings' );
 
 /**
- * Callback da seção de configurações.
+ * Callback da seção de roles.
  */
-function mur_general_section_callback() {
-    echo '<p>Controle as configurações principais do plugin aqui.</p>';
+function mur_roles_section_callback() {
+    echo '<p>' . __( 'Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo.', 'manage-user-roles' ) . '</p>';
 }
 
 /**
- * Callback do campo de ativação.
+ * Callback para renderizar os campos de cada role.
  */
-function mur_plugin_enabled_field_callback() {
-    $option = get_option( 'mur_plugin_enabled', '1' );
-    ?>
-    <label for="mur_plugin_enabled">
-        <input type="checkbox" id="mur_plugin_enabled" name="mur_plugin_enabled" value="1" <?php checked( '1', $option ); ?> />
-        Marque esta caixa para ativar a restrição de posts para usuários não-administradores.
-    </label>
-    <?php
+function mur_role_field_callback( $args ) {
+    $settings = get_option( 'mur_role_settings', array() );
+    $role_slug = $args['slug'];
+    $current_rule = isset( $settings[ $role_slug ]['view_rule'] ) ? $settings[ $role_slug ]['view_rule'] : 'own_content';
+    
+    $rules = [
+        'own_content' => __( 'Ver apenas o próprio conteúdo', 'manage-user-roles' ),
+        'all_content' => __( 'Ver todo o conteúdo (sem restrições)', 'manage-user-roles' ),
+    ];
+
+    echo "<select name='mur_role_settings[{$role_slug}][view_rule]'>";
+    foreach ( $rules as $rule_slug => $rule_name ) {
+        echo "<option value='{$rule_slug}' " . selected( $current_rule, $rule_slug, false ) . ">{$rule_name}</option>";
+    }
+    echo "</select>";
 }
