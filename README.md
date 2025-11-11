@@ -1,58 +1,62 @@
 # Manage User Roles
 
-- Contributors: airtonvancin
-- Donate link: https://pagseguro.uol.com.br/checkout/v2/donation.html?currency=BRL&receiverEmail=chapolinsk@hotmail.com
-- Tags: user, roles, administration, adm, internationalization, i18n, translation, portuguese, spanish
-- Requires at least: 3.0
-- Tested up to: 6.0
-- Stable tag: 1.1.0
-- License: GPLv2 or later
-- License URI: http://www.gnu.org/licenses/gpl-2.0.html
+- **Contributors:** airtonvancin
+- **Donate link:** https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
+- **Tags:** user, roles, administration, adm, internationalization, i18n, translation, portuguese, spanish
+- **Requires at least:** 3.0
+- **Tested up to:** 6.0
+- **Stable tag:** 1.2.0
+- **License:** GPLv2 or later
+- **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
-Restricts users to only see their own posts in the WordPress admin.
+A simple but powerful plugin to control content visibility for non-administrator users, ensuring they only see their own posts.
 
 ## Description
 
-Restricts users to only see their own posts in the WordPress admin.
+This plugin provides two main features to enhance user role management in the WordPress admin area:
+
+1.  **Post Restriction:** For any user who is not an administrator, the posts list table (Posts, Pages, and any other post types) will be filtered to show only the content they have authored.
+2.  **Admin Bar Cleanup:** It removes the "Edit" link from the admin bar when a non-administrator is viewing a single post they did not create.
+
+This is perfect for multi-author sites where you want to prevent editors, authors, or contributors from seeing or accessing content created by other users. By default, these features are active, but they can be disabled by an administrator via the settings page.
 
 ## Installation
 
-* Upload plugin files to your plugins folder, or install using WordPress built-in Add New Plugin installer;
-* Activate the plugin;
-* Navigate to Plugin Settings and fill settings.
+1.  Upload the `manage-user-roles` folder to the `/wp-content/plugins/` directory.
+2.  Activate the plugin through the 'Plugins' menu in WordPress.
+3.  (Optional) Navigate to **Settings > Manage User Roles** in your WordPress admin panel.
+4.  There you can uncheck the box to disable the plugin's restrictions if needed.
 
 ## Frequently Asked Questions
 
+### What exactly does this plugin do?
+
+It filters the post list in the admin dashboard so that non-admin users can only see the posts they have created. It also hides the "Edit" button on the admin bar for posts they don't own.
+
+### How can I disable this feature?
+
+If you are an administrator, you can go to **Settings > Manage User Roles** and uncheck the "Ativar Restrições" box. This will disable all plugin functionality.
+
 ### What languages are supported?
 
-* The plugin supports English (default), Portuguese (Brazil), and Spanish.
+The plugin supports English (default), Portuguese (Brazil), and Spanish.
 
 ### What is the plugin license?
 
-* This plugin is released under a GPL license.
-
-## Screenshots
+This plugin is released under a GPL license.
 
 ## Changelog
 
-**1.1.0**
+### 1.2.0
+* Add a settings page to allow administrators to enable or disable the functionality.
+* Improve plugin description and instructions.
+
+### 1.1.0
 * Add Portuguese (Brazil) and Spanish language support.
 * Remove unused files and code.
 * Update plugin version.
 
-**1.0.0**
-
-* Initial version.
-
-## Upgrade Notice
-
-**1.1.0**
-* Add Portuguese (Brazil) and Spanish language support.
-* Remove unused files and code.
-* Update plugin version.
-
-**1.0.0**
-
+### 1.0.0
 * Initial version.
 
 ## License 
