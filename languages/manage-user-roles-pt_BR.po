@@ -1,0 +1,39 @@
+# Portuguese (Brazil) translations for Manage User Roles
+# Copyright (C) 2025 Airton Vancin
+# This file is distributed under the same license as the Manage User Roles package.
+# Airton Vancin <airtonvancin@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Manage User Roles\n"
+"Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles\n"
+"Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
+"Language-Team: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-11 16:00+0000\n"
+"PO-Revision-Date: 2025-11-11 16:00+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsAndFuzzy: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+Language: pt_BR\n"
+
+#: manage-user-roles.php:10
+msgid "Manage User Roles"
+msgstr "Gerenciar Papéis de Usuário"
+
+#: manage-user-roles.php:12
+msgid "Restricts users to only see their own posts in the WordPress admin."
+msgstr "Restringe usuários a verem apenas suas próprias publicações no painel do WordPress."
+
+#: manage-user-roles.php:34
+msgid "Limit posts for each user."
+msgstr "Limitar publicações por usuário."
+
+#: manage-user-roles.php:54
+msgid "Remove edit post in admin bar"
+msgstr "Remover editar publicação na barra de administração"

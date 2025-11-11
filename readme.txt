@@ -1,14 +1,16 @@
 === Manage User Roles ===
 Contributors: airtonvancin
 Donate link: https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
-Tags: user, roles, administration, adm
+Tags: user, roles, administration, adm, internationalization, i18n, translation, portuguese, spanish
 Requires at least: 3.0
-Tested up to: 6.9
+Tested up to: 6.0
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Show only your posts publications
+Restricts users to only see their own posts in the WordPress admin.
+
+== Description ==
 
 Restricts users to only see their own posts in the WordPress admin.
 
@@ -20,6 +22,10 @@ Restricts users to only see their own posts in the WordPress admin.
 
 == Frequently Asked Questions ==
 
+= What languages are supported? =
+
+* The plugin supports English (default), Portuguese (Brazil), and Spanish.
+
 = What is the plugin license? =
 
 * This plugin is released under a GPL license.
@@ -29,6 +35,7 @@ Restricts users to only see their own posts in the WordPress admin.
 == Changelog ==
 
 = 1.1.0 =
+* Add Portuguese (Brazil) and Spanish language support.
 * Remove unused files and code.
 * Update plugin version.
 
@@ -39,6 +46,7 @@ Restricts users to only see their own posts in the WordPress admin.
 == Upgrade Notice ==
 
 = 1.1.0 =
+* Add Portuguese (Brazil) and Spanish language support.
 * Remove unused files and code.
 * Update plugin version.
 

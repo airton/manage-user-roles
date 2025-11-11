@@ -1,0 +1,35 @@
+# Loco Gettext Template for Manage User Roles
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Manage User Roles\n"
+"Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles\n"
+"Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-11 16:00+0000\n"
+"PO-Revision-Date: 2025-11-11 16:00+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsAndFuzzy: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: manage-user-roles.php:10
+msgid "Manage User Roles"
+msgstr ""
+
+#: manage-user-roles.php:12
+msgid "Restricts users to only see their own posts in the WordPress admin."
+msgstr ""
+
+#: manage-user-roles.php:34
+msgid "Limit posts for each user."
+msgstr ""
+
+#: manage-user-roles.php:54
+msgid "Remove edit post in admin bar"
+msgstr ""
