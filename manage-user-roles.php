@@ -3,7 +3,7 @@
  * Plugin Name:       Manage User Roles
  * Plugin URI:        https://github.com/airton/manage-user-roles
  * Description:       Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Author:            @airton
  * Author URI:        https://airtonvancin.com
  * Text Domain:       manage-user-roles
@@ -108,7 +108,7 @@ function mur_render_settings_page() {
             <?php
             settings_fields( 'mur_settings_group' );
             do_settings_sections( 'manage-user-roles' );
-            submit_button();
+            submit_button( __( 'Save Changes', 'manage-user-roles' ) );
             ?>
         </form>
     </div>
@@ -127,7 +127,7 @@ function mur_register_settings() {
 
     add_settings_section(
         'mur_roles_section',
-        __( 'Regras de Visualização por Função', 'manage-user-roles' ),
+        __( 'Role Viewing Rules', 'manage-user-roles' ),
         'mur_roles_section_callback',
         'manage-user-roles'
     );
@@ -152,7 +152,7 @@ add_action( 'admin_init', 'mur_register_settings' );
  * Callback da seção de roles.
  */
 function mur_roles_section_callback() {
-    echo '<p>' . esc_html__( 'Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo.', 'manage-user-roles' ) . '</p>';
+    echo '<p>' . esc_html__( 'Define content viewing permissions for each user role. Administrators always see all content.', 'manage-user-roles' ) . '</p>';
 }
 
 /**
@@ -164,8 +164,8 @@ function mur_role_field_callback( $args ) {
     $current_rule = isset( $settings[ $role_slug ]['view_rule'] ) ? $settings[ $role_slug ]['view_rule'] : 'own_content';
     
     $rules = [
-        'own_content' => __( 'Ver apenas o próprio conteúdo', 'manage-user-roles' ),
-        'all_content' => __( 'Ver todo o conteúdo (sem restrições)', 'manage-user-roles' ),
+        'own_content' => __( 'View only own content', 'manage-user-roles' ),
+        'all_content' => __( 'View all content (no restrictions)', 'manage-user-roles' ),
     ];
 
     printf(
@@ -200,7 +200,6 @@ function mur_sanitize_role_settings( $input ) {
         if ( isset( $input[ $role_slug ]['view_rule'] ) && in_array( $input[ $role_slug ]['view_rule'], $allowed_rules, true ) ) {
             $sanitized_input[ $role_slug ]['view_rule'] = $input[ $role_slug ]['view_rule'];
         } else {
-            // Se um valor inválido for enviado, reverte para o padrão seguro.
             $sanitized_input[ $role_slug ]['view_rule'] = 'own_content';
         }
     }

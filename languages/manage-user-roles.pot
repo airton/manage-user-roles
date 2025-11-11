@@ -1,35 +1,46 @@
-# Loco Gettext Template for Manage User Roles
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Manage User Roles\n"
-"Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles\n"
+"Project-Id-Version: Manage User Roles 2.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles/issues\n"
+"POT-Creation-Date: 2025-11-11 17:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-11 16:00+0000\n"
-"PO-Revision-Date: 2025-11-11 16:00+0000\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsAndFuzzy: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"X-Generator: Poedit 2.2\n"
 
-#: manage-user-roles.php:10
+#: manage-user-roles.php:11
+msgid "Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules."
+msgstr ""
+
+#: manage-user-roles.php:90
+msgid "Manage User Roles Settings"
+msgstr ""
+
+#: manage-user-roles.php:91
 msgid "Manage User Roles"
 msgstr ""
 
-#: manage-user-roles.php:12
-msgid "Restricts users to only see their own posts in the WordPress admin."
+#: manage-user-roles.php:120
+msgid "Role Viewing Rules"
 msgstr ""
 
-#: manage-user-roles.php:34
-msgid "Limit posts for each user."
+#: manage-user-roles.php:145
+msgid "Define content viewing permissions for each user role. Administrators always see all content."
 msgstr ""
 
-#: manage-user-roles.php:54
-msgid "Remove edit post in admin bar"
+#: manage-user-roles.php:158
+msgid "View only own content"
+msgstr ""
+
+#: manage-user-roles.php:159
+msgid "View all content (no restrictions)"
+msgstr ""
+
+#: manage-user-roles.php:105
+msgid "Save Changes"
 msgstr ""

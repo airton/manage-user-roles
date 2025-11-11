@@ -4,7 +4,7 @@ Donate link: https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=9397554
 Tags: user, roles, administration, content visibility, permissions
 Requires at least: 3.0
 Tested up to: 6.9
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ This version of the plugin supports rules for seeing one's own content or all co
 1. Configurações do Plugin: Defina as permissões de visualização para cada função de usuário.
 
 == Changelog ==
+
+= 2.0.1 =
+* Fix: Adjust default English translation for settings page.
 
 = 2.0.0 =
 * **Major Overhaul:** Replaced the simple on/off switch with a flexible, role-based settings page.

@@ -4,8 +4,8 @@
 - **Donate link:** https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
 - **Tags:** user, roles, administration, content visibility, permissions
 - **Requires at least:** 3.0
-- **Tested up to:** 6.0
-- **Stable tag:** 2.0.0
+- **Tested up to:** 6.9
+- **Stable tag:** 2.0.1
 - **License:** GPLv2 or later
 - **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,9 @@ By default, all non-administrator roles are set to "See only their own content" 
 This version of the plugin supports rules for seeing one's own content or all content. More complex rules are being considered for future versions.
 
 ## Changelog
+
+### 2.0.1
+* Fix: Adjust default English translation for settings page.
 
 ### 2.0.0
 * **Major Overhaul:** Replaced the simple on/off switch with a flexible, role-based settings page.
