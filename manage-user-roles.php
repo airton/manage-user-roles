@@ -119,7 +119,11 @@ function mur_render_settings_page() {
  * Registra as seções e campos da página de configurações.
  */
 function mur_register_settings() {
-    register_setting( 'mur_settings_group', 'mur_role_settings' );
+    register_setting(
+        'mur_settings_group',
+        'mur_role_settings',
+        'mur_sanitize_role_settings' // Adiciona o callback de sanitização.
+    );
 
     add_settings_section(
         'mur_roles_section',
@@ -148,7 +152,7 @@ add_action( 'admin_init', 'mur_register_settings' );
  * Callback da seção de roles.
  */
 function mur_roles_section_callback() {
-    echo '<p>' . __( 'Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo.', 'manage-user-roles' ) . '</p>';
+    echo '<p>' . esc_html__( 'Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo.', 'manage-user-roles' ) . '</p>';
 }
 
 /**
@@ -164,9 +168,42 @@ function mur_role_field_callback( $args ) {
         'all_content' => __( 'Ver todo o conteúdo (sem restrições)', 'manage-user-roles' ),
     ];
 
-    echo "<select name='mur_role_settings[{$role_slug}][view_rule]'>";
+    printf(
+        '<select name="%s">',
+        esc_attr( "mur_role_settings[{$role_slug}][view_rule]" )
+    );
+
     foreach ( $rules as $rule_slug => $rule_name ) {
-        echo "<option value='{$rule_slug}' " . selected( $current_rule, $rule_slug, false ) . ">{$rule_name}</option>";
+        printf(
+            '<option value="%s" %s>%s</option>',
+            esc_attr( $rule_slug ),
+            selected( $current_rule, $rule_slug, false ),
+            esc_html( $rule_name )
+        );
     }
     echo "</select>";
+}
+
+/**
+ * Sanitize e valida as opções do plugin antes de salvar.
+ *
+ * @param array $input As opções enviadas pelo formulário.
+ * @return array As opções sanitizadas.
+ */
+function mur_sanitize_role_settings( $input ) {
+    $sanitized_input = array();
+    $allowed_rules = array( 'own_content', 'all_content' );
+    $roles = get_editable_roles();
+    unset( $roles['administrator'] );
+
+    foreach ( $roles as $role_slug => $role_details ) {
+        if ( isset( $input[ $role_slug ]['view_rule'] ) && in_array( $input[ $role_slug ]['view_rule'], $allowed_rules, true ) ) {
+            $sanitized_input[ $role_slug ]['view_rule'] = $input[ $role_slug ]['view_rule'];
+        } else {
+            // Se um valor inválido for enviado, reverte para o padrão seguro.
+            $sanitized_input[ $role_slug ]['view_rule'] = 'own_content';
+        }
+    }
+
+    return $sanitized_input;
 }
