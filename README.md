@@ -1,15 +1,11 @@
 # Manage User Roles
+> A flexible plugin to control content visibility for non-administrator users with advanced, role-based rules.
 
-- **Contributors:** airtonvancin
-- **Donate link:** https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=93975544-d3277b00-b729-47a7-bfa0-9a19d4e5afec
-- **Tags:** user, roles, administration, content visibility, permissions
-- **Requires at least:** 3.0
-- **Tested up to:** 6.9
-- **Stable tag:** 2.0.1
-- **License:** GPLv2 or later
-- **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+[👋 Donate](https://link.mercadopago.com.br/pluginswordpress)
 
-A flexible plugin to control content visibility for non-administrator users with advanced, role-based rules.
+Link for page the wordpress plugin
+[http://wordpress.org/plugins/video-destacado/](http://wordpress.org/plugins/manage-user-roles/)
+
 
 ## Description
 
@@ -49,6 +45,9 @@ By default, all non-administrator roles are set to "See only their own content" 
 This version of the plugin supports rules for seeing one's own content or all content. More complex rules are being considered for future versions.
 
 ## Changelog
+
+### 2.0.2
+* i18n: Update and compile translations for pt_BR and es
 
 ### 2.0.1
 * Fix: Apply security fixes for sanitization and escaping output.
