@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Manage User Roles 2.0.0\n"
+"Project-Id-Version: Manage User Roles 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles/issues\n"
-"POT-Creation-Date: 2025-11-11 17:00+0000\n"
+"POT-Creation-Date: 2025-11-11 18:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
 "Language-Team: \n"
@@ -13,34 +13,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
-#: manage-user-roles.php:11
+#: manage-user-roles.php:12
 msgid "Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules."
 msgstr ""
 
-#: manage-user-roles.php:90
+#: manage-user-roles.php:91
 msgid "Manage User Roles Settings"
 msgstr ""
 
-#: manage-user-roles.php:91
+#: manage-user-roles.php:92
 msgid "Manage User Roles"
 msgstr ""
 
-#: manage-user-roles.php:120
+#: manage-user-roles.php:106
+msgid "Save Changes"
+msgstr ""
+
+#: manage-user-roles.php:121
 msgid "Role Viewing Rules"
 msgstr ""
 
-#: manage-user-roles.php:145
+#: manage-user-roles.php:146
 msgid "Define content viewing permissions for each user role. Administrators always see all content."
 msgstr ""
 
-#: manage-user-roles.php:158
+#: manage-user-roles.php:159
 msgid "View only own content"
 msgstr ""
 
-#: manage-user-roles.php:159
+#: manage-user-roles.php:160
 msgid "View all content (no restrictions)"
-msgstr ""
-
-#: manage-user-roles.php:105
-msgid "Save Changes"
 msgstr ""

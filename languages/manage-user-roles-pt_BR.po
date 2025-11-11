@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Manage User Roles 2.0.0\n"
+"Project-Id-Version: Manage User Roles 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles/issues\n"
-"POT-Creation-Date: 2025-11-11 17:00+0000\n"
-"PO-Revision-Date: 2025-11-11 17:05+0000\n"
+"POT-Creation-Date: 2025-11-11 18:00+0000\n"
+"PO-Revision-Date: 2025-11-11 18:05+0000\n"
 "Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -17,34 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
-#: manage-user-roles.php:11
+#: manage-user-roles.php:12
 msgid "Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules."
 msgstr "Restringe usuários a verem apenas seus próprios posts no painel do WordPress, com regras avançadas baseadas em funções."
 
-#: manage-user-roles.php:90
+#: manage-user-roles.php:91
 msgid "Manage User Roles Settings"
 msgstr "Configurações do Manage User Roles"
 
-#: manage-user-roles.php:91
+#: manage-user-roles.php:92
 msgid "Manage User Roles"
 msgstr "Gerenciar Funções de Usuário"
 
-#: manage-user-roles.php:120
+#: manage-user-roles.php:106
+msgid "Save Changes"
+msgstr "Salvar Alterações"
+
+#: manage-user-roles.php:121
 msgid "Role Viewing Rules"
 msgstr "Regras de Visualização por Função"
 
-#: manage-user-roles.php:145
+#: manage-user-roles.php:146
 msgid "Define content viewing permissions for each user role. Administrators always see all content."
 msgstr "Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo."
 
-#: manage-user-roles.php:158
+#: manage-user-roles.php:159
 msgid "View only own content"
 msgstr "Ver apenas o próprio conteúdo"
 
-#: manage-user-roles.php:159
+#: manage-user-roles.php:160
 msgid "View all content (no restrictions)"
 msgstr "Ver todo o conteúdo (sem restrições)"
-
-#: manage-user-roles.php:105
-msgid "Save Changes"
-msgstr "Salvar Alterações"

@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Manage User Roles 2.0.0\n"
+"Project-Id-Version: Manage User Roles 2.0.1\n"
 "Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles/issues\n"
-"POT-Creation-Date: 2025-11-11 17:00+0000\n"
-"PO-Revision-Date: 2025-11-11 17:05+0000\n"
+"POT-Creation-Date: 2025-11-11 18:00+0000\n"
+"PO-Revision-Date: 2025-11-11 18:05+0000\n"
 "Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
@@ -17,34 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
-#: manage-user-roles.php:11
+#: manage-user-roles.php:12
 msgid "Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules."
 msgstr "Restringe a los usuarios para que solo vean sus propias publicaciones en el administrador de WordPress, con reglas avanzadas basadas en roles."
 
-#: manage-user-roles.php:90
+#: manage-user-roles.php:91
 msgid "Manage User Roles Settings"
 msgstr "Configuración de Manage User Roles"
 
-#: manage-user-roles.php:91
+#: manage-user-roles.php:92
 msgid "Manage User Roles"
 msgstr "Administrar Roles de Usuario"
 
-#: manage-user-roles.php:120
+#: manage-user-roles.php:106
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#: manage-user-roles.php:121
 msgid "Role Viewing Rules"
 msgstr "Reglas de Visualización por Rol"
 
-#: manage-user-roles.php:145
+#: manage-user-roles.php:146
 msgid "Define content viewing permissions for each user role. Administrators always see all content."
 msgstr "Defina los permisos de visualización de contenido para cada rol de usuario. Los administradores siempre ven todo el contenido."
 
-#: manage-user-roles.php:158
+#: manage-user-roles.php:159
 msgid "View only own content"
 msgstr "Ver solo el contenido propio"
 
-#: manage-user-roles.php:159
+#: manage-user-roles.php:160
 msgid "View all content (no restrictions)"
 msgstr "Ver todo el contenido (sin restricciones)"
-
-#: manage-user-roles.php:105
-msgid "Save Changes"
-msgstr "Guardar Cambios"
