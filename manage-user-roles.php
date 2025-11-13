@@ -3,7 +3,7 @@
  * Plugin Name:       Manage User Roles
  * Plugin URI:        https://github.com/airton/manage-user-roles
  * Description:       Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules.
- * Version:           2.0.2
+ * Version:           2.1.0
  * Author:            @airton
  * Author URI:        https://airtonvancin.com
  * Text Domain:       manage-user-roles
