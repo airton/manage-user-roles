@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Manage User Roles 2.0.1\n"
+"Project-Id-Version: Manage User Roles 2.0.2\n"
 "Report-Msgid-Bugs-To: https://github.com/airton/manage-user-roles/issues\n"
-"POT-Creation-Date: 2025-11-11 18:00+0000\n"
-"PO-Revision-Date: 2025-11-11 18:05+0000\n"
+"POT-Creation-Date: 2025-12-27 15:00+0000\n"
+"PO-Revision-Date: 2025-12-27 15:05+0000\n"
 "Last-Translator: Airton Vancin <airtonvancin@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -17,34 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
-#: manage-user-roles.php:12
+#: manage-user-roles.php:5
 msgid "Restricts users to only see their own posts in the WordPress admin, with advanced role-based rules."
 msgstr "Restringe usuários a verem apenas seus próprios posts no painel do WordPress, com regras avançadas baseadas em funções."
 
-#: manage-user-roles.php:91
+#: manage-user-roles.php:121
 msgid "Manage User Roles Settings"
 msgstr "Configurações do Manage User Roles"
 
-#: manage-user-roles.php:92
+#: manage-user-roles.php:122
 msgid "Manage User Roles"
 msgstr "Gerenciar Funções de Usuário"
 
-#: manage-user-roles.php:106
+#: manage-user-roles.php:145
 msgid "Save Changes"
 msgstr "Salvar Alterações"
 
-#: manage-user-roles.php:121
+#: manage-user-roles.php:164
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+#: manage-user-roles.php:171
+msgid "Restrict Media Library Access"
+msgstr "Restringir Acesso à Biblioteca de Mídia"
+
+#: manage-user-roles.php:178
 msgid "Role Viewing Rules"
 msgstr "Regras de Visualização por Função"
 
-#: manage-user-roles.php:146
+#: manage-user-roles.php:193
 msgid "Define content viewing permissions for each user role. Administrators always see all content."
 msgstr "Defina as permissões de visualização de conteúdo para cada função de usuário. Administradores sempre veem todo o conteúdo."
 
-#: manage-user-roles.php:159
+#: manage-user-roles.php:201
+msgid "Global settings for content visibility."
+msgstr "Configurações globais para visibilidade de conteúdo."
+
+#: manage-user-roles.php:210
+msgid "Apply \"View only own content\" restrictions to the Media Library (Grid & List)."
+msgstr "Aplicar restrições de \"Ver apenas o próprio conteúdo\" à Biblioteca de Mídia (Grade e Lista)."
+
+#: manage-user-roles.php:211
+msgid "If disabled, users can see all images in the Media Library regardless of their post viewing rules."
+msgstr "Se desativado, os usuários podem ver todas as imagens na Biblioteca de Mídia, independentemente de suas regras de visualização."
+
+#: manage-user-roles.php:220
 msgid "View only own content"
 msgstr "Ver apenas o próprio conteúdo"
 
-#: manage-user-roles.php:160
+#: manage-user-roles.php:221
 msgid "View all content (no restrictions)"
 msgstr "Ver todo o conteúdo (sem restrições)"
+
+#: manage-user-roles.php:254
+msgid "Settings"
+msgstr "Configurações"
+
+#: manage-user-roles.php:312
+msgid "☕️ Buy me a coffee"
+msgstr "☕️ Pague-me um café"
+
+#: manage-user-roles.php:316
+msgid "Visite plugin page"
+msgstr "Visite a página do plugin"

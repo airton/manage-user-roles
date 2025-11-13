@@ -1,6 +1,6 @@
 === Manage User Roles ===
 Contributors: airtonvancin
-Donate link: https://link.mercadopago.com.br/pluginswordpress
+Donate link: https://www.buymeacoffee.com/airton
 Tags: user, roles, administration, content visibility, permissions
 Requires at least: 3.0
 Tested up to: 6.9
@@ -21,6 +21,7 @@ This plugin gives administrators fine-grained control over content visibility in
     *   **See only their own content:** The user will only see the posts, pages, or custom post types they have personally created.
     *   **See all content:** The user will have no content restrictions and can see everything, just like an administrator.
 *   **Admin Bar Cleanup:** The "Edit" link on the admin bar is automatically hidden when a user is viewing a post they don't have permission to see.
+*   **Media Library Isolation:** (New in 2.1.0) Optionally restrict the Media Library so users only see their own uploaded files. Works for both Grid and List views.
 *   **Administrator Override:** Administrators are never affected by these rules and can always see all content.
 
 This is the perfect tool for multi-author websites, magazines, or any project where you need to ensure users only have access to the content relevant to them.
@@ -54,7 +55,9 @@ This version of the plugin supports rules for seeing one's own content or all co
 == Changelog ==
 
 = 2.1.0 =
-* Feat: Add new plugin assets (banner and icons) for a modern look.
+* Feature: Added Media Library Isolation. Users with "own content" restriction now also see only their own images in the Media Library.
+* Feature: Added a global setting to toggle Media Library restrictions on/off.
+* Tweak: Added "Visit Plugin Site" and "Buy me a coffee" links to the plugin row.
 
 = 2.0.2 =
 * i18n: Update and compile translations for pt_BR and es
